@@ -1,0 +1,174 @@
+/* marketplace.css */
+
+.mkt-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.mkt-stat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 20px;
+  box-shadow: var(--shadow-sm);
+  animation: fadeUp var(--t-slow) var(--ease) both;
+}
+.mkt-stat-val   { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--forest); }
+.mkt-stat-label { font-size: 12px; color: var(--ink-soft); }
+
+.mkt-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: 14px 18px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  box-shadow: var(--shadow-xs);
+}
+.mkt-search { position: relative; flex: 1; min-width: 180px; }
+.mkt-search input { padding-left: 36px !important; }
+.mkt-search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); opacity: .5; pointer-events: none; }
+
+.mkt-tabs {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.mkt-tab {
+  padding: 7px 14px;
+  border-radius: 99px;
+  border: 1.5px solid var(--border);
+  background: var(--surface-alt);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: all var(--t-fast);
+}
+.mkt-tab:hover { border-color: var(--forest-mid); color: var(--forest); }
+.mkt-tab--active { background: var(--forest); color: #fff; border-color: var(--forest); }
+
+.mkt-sort {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+}
+.mkt-view-active { background: var(--parchment) !important; color: var(--forest) !important; }
+
+.mkt-section { margin-bottom: 36px; }
+.mkt-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.mkt-section-header h3 { font-size: 17px; font-weight: 700; color: var(--ink); }
+.mkt-count { font-size: 13px; color: var(--ink-soft); }
+.mkt-live-badge {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--red);
+  background: var(--red-light);
+  padding: 3px 10px;
+  border-radius: 99px;
+  animation: pulse 2s infinite;
+}
+
+.mkt-product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 16px;
+}
+.mkt-product-list { display: flex; flex-direction: column; gap: 10px; }
+
+.mkt-product-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--t-fast), box-shadow var(--t-fast);
+  animation: scaleIn var(--t-base) var(--ease-spring) both;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.mkt-product-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+
+.mkt-badge {
+  position: absolute;
+  top: 12px; right: 12px;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 99px;
+  background: var(--amber-light);
+  color: var(--amber-dark);
+}
+
+.mkt-product-emoji { font-size: 38px; margin-bottom: 4px; }
+.mkt-tag { width: fit-content; }
+.mkt-product-name { font-size: 14.5px; font-weight: 700; color: var(--ink); margin-top: 2px; }
+.mkt-product-desc { font-size: 12px; color: var(--ink-soft); line-height: 1.4; }
+.mkt-product-rating { font-size: 12px; color: var(--amber); }
+.mkt-product-rating span { color: var(--ink-soft); }
+
+.mkt-product-price { display: flex; align-items: baseline; gap: 4px; margin: 2px 0; }
+.mkt-price-val { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--forest); }
+.mkt-price-unit { font-size: 12px; color: var(--ink-soft); }
+
+.mkt-stock { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--ink-soft); margin-bottom: 4px; }
+.mkt-stock-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
+.mkt-stock-dot--amber { background: var(--amber); }
+
+.mkt-cart-pill {
+  background: var(--forest);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 99px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Produce grid */
+.mkt-produce-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+.mkt-produce-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: 18px;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--t-fast);
+}
+.mkt-produce-card:hover { transform: translateY(-2px); }
+.mkt-produce-top { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.mkt-produce-icon { font-size: 28px; }
+.mkt-produce-name { font-size: 14.5px; font-weight: 700; color: var(--ink); }
+.mkt-produce-vol  { font-size: 11.5px; color: var(--ink-soft); }
+.mkt-produce-price { font-family: var(--font-display); font-size: 22px; font-weight: 700; color: var(--forest); margin-bottom: 8px; }
+.mkt-produce-price span { font-size: 13px; font-weight: 400; color: var(--ink-soft); }
+
+/* Sell modal extras */
+.mkt-sell-rate { font-size: 14px; color: var(--ink-mid); margin-bottom: 16px; padding: 10px 14px; background: var(--surface-alt); border-radius: var(--r-sm); }
+.mkt-sell-total { font-size: 14px; color: var(--forest); font-weight: 600; margin-bottom: 12px; padding: 8px 14px; background: var(--mint); border-radius: var(--r-sm); }
+
+@media (max-width: 768px) {
+  .mkt-stats { grid-template-columns: repeat(2,1fr); }
+  .mkt-controls { flex-direction: column; align-items: stretch; }
+  .mkt-sort { margin-left: 0; }
+}
